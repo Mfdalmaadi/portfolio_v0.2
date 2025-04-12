@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/projects.css";
+import "../style/Projects.css";
 
 const Projects = ( {theme} )=>{
     const projects = [
