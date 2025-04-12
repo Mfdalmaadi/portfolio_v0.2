@@ -1,0 +1,149 @@
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Timeline Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #e0e0e0;
+    transform: translateX(-50%);
+}
+
+/* Timeline Item */
+.timeline-items {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Timeline Icon */
+.timeline-icon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: #19191a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline Content */
+.timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.timeline-content.dark{
+    background: #1f1f3d;
+}
+.timeline-content.light{
+    background-color: #d8cdc7;
+}
+
+/* Timeline Content Positioning (Alternate Sides) */
+.timeline-items:nth-child(odd) .timeline-content {
+    left: 0;
+}
+
+.timeline-items:nth-child(even) .timeline-content {
+    left: 55%;
+}
+
+/* Timeline Arrow */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Arrow Positioning for Odd Items */
+.timeline-items:nth-child(odd) .timeline-content.dark::before {
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #1f1f3d;
+}
+.timeline-items:nth-child(odd) .timeline-content.light::before {
+    right: -10px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #d8cdc7;
+}
+
+/* Arrow Positioning for Even Items */
+.timeline-items:nth-child(even) .timeline-content.dark::before {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #1f1f3d transparent transparent;
+}
+.timeline-items:nth-child(even) .timeline-content.light::before {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #d8cdc7 transparent transparent;
+}
+
+/* Timeline Image */
+.timeline-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+/* Timeline Heading */
+.timeline-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+h2.dark{
+    color: white;
+}
+h2.light{
+    color: rgb(56, 56, 56);
+}
+h1.light{
+    color: rgb(77, 74, 74);
+}
+
+/* Timeline Description */
+.timeline-content p {
+    margin: 0;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.timeline-content p:hover {
+    -webkit-line-clamp: initial;
+    opacity: 1;
+}
+
+p.dark{
+    color: #a09e9e;
+}
+.light{
+    color: rgb(95, 85, 85);
+}

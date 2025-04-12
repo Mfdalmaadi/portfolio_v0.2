@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.light{
+    background-color: rgb(214, 212, 212);
+}
+body.dark{
+    background-color: black;
+}
+

@@ -1,0 +1,106 @@
+/* nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: black;
+    padding: 10px 20px;
+    height: 130px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in forwards;
+    
+}
+nav.light{
+    background-color: white;
+}
+nav.dark{
+    background-color: black;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: rgb(94, 91, 91);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bolder;
+    font-style: normal;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    
+}
+
+nav ul li a:hover {
+    color: #008080;
+}
+
+main {
+    margin-top: 130px;
+}
+
+
+/* Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: fadeIn 2s ease-in forwards;
+    padding: 10px 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(94, 91, 91, 0.9);
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #008080;
+    background-color: rgba(0, 128, 128, 0.1);
+}
+
+/* Light Theme */
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(94, 91, 91, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #008080;
+}
+
+/* Dark Theme */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #008080;
+}
