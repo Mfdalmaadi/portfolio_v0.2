@@ -21,22 +21,22 @@ const App = ()=>{
             <div className={`app ${theme}`}>
                 <Navbar theme={theme} changetheme={changetheme} />
                 <main>
-                <section id="home">
+                <section id="home" className="animation">
                     <Home/>
                 </section>
-                <section id="about">
+                <section id="about" className="animation">
                     <About theme={theme} />
                 </section>
                 <section id="skills">
                     <Skills theme={theme} />
                 </section>
-                <section id="projects">
+                <section id="projects" className="animation">
                     <Projects theme={theme} />
                 </section>
-                <section id="certificate">
+                <section id="certificate" className="animation">
                     <Certificate theme={theme} />
                 </section>
-                <section id="contact">
+                <section id="contact" className="animation">
                     <Contact theme={theme} />
                 </section>
                 </main>
