@@ -219,16 +219,6 @@ label.dark {
     padding: 0;
 }
 
-.uu2{
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-
 .uu li {
     display: flex;
     align-items: center;
@@ -240,6 +230,16 @@ label.dark {
     font-size: 1.4rem;
     color: #008080;
     margin-right: 12px;
+}
+
+.uu2{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
 .uu2 li {
