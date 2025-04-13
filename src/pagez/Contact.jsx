@@ -42,26 +42,26 @@ function Contact({ theme }) {
                         </li>
                     </ul>
                     <h2 className={`title ${theme}`}>Social Media</h2>
-                    <ul className="uu">
+                    <ul className="uu2">
                         <li>
                             <button className="bb">
                                 <a href="https://www.linkedin.com/in/el-moufaddal-maadi-79113431b/" target="_blank" rel="noopener noreferrer">
                                     <i className="bi bi-linkedin"></i>
-                                </a> LinkedIn
+                                </a>
                             </button>
                         </li>
                         <li>
                             <button className="bb">
                                 <a href="https://github.com/Mfdalmaadi" target="_blank" rel="noopener noreferrer">
                                     <i className="bi bi-github"></i>
-                                </a> GitHub
+                                </a>
                             </button>
                         </li>
                         <li>
                             <button className="bb">
                                 <a href="https://www.instagram.com/mfdalmaadi?igsh=bHJzY3V6ZDYwemFx" target="_blank" rel="noopener noreferrer">
                                     <i className="bi bi-instagram"></i>
-                                </a> Instagram
+                                </a>
                             </button>
                         </li>
                     </ul>
