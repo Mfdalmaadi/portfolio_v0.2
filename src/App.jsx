@@ -10,12 +10,18 @@ import "./style/App.css";
 import Projects from "./pagez/Projects";
 import Certificate from "./pagez/Certificate";
 import Contact from "./pagez/Contact";
+import SplashScreen from "./components/SplashScreen";
 
 const App = ()=>{
     const [theme, setTheme] = useState("dark");
+    const [showSplash, setShowSplash] = useState(true);
+
     const changetheme = ()=>{
         setTheme((prevtheme) => prevtheme === "dark" ? "light" : "dark");
     }
+    if (showSplash) {
+        return <SplashScreen onFinish={() => setShowSplash(false)} />;
+      }
     return(
         <Router>
             <div className={`app ${theme}`}>
