@@ -38,7 +38,6 @@
   }
   
   .flip-card-back {
-    background-image: url("me3.jpg");
     background-size: 300px;
     opacity: 0.7;
     transform: rotateY(180deg);

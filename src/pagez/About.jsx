@@ -23,7 +23,7 @@ const About = ({theme})=>{
                     <div className="flip-card-front">
                         <img src="me.jpg" alt="Maadi El Moufaddal" className="img1" />
                     </div>
-                    <div className="flip-card-back">
+                    <div className="flip-card-back" style={{ backgroundImage:"url('me3.jpg')" }}>
                         <ul>
                             <li><a href="https://www.linkedin.com/in/el-moufaddal-maadi-79113431b/" target="_blank" rel="noopener noreferrer"><i className="bi bi-linkedin" style={{opacity:"1"}}></i></a></li>
                             <li><a href="https://github.com/Mfdalmaadi" target="_blank" rel="noopener noreferrer"><i className="bi bi-github"></i></a></li>
