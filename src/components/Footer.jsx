@@ -4,7 +4,8 @@ import "../style/Footer.css";
 const Footer = ({theme})=>{
     return(
         <footer className={`footer ${theme}`}>
-            <h5>© 2025 Portfolio. All right reserved</h5>
+            <h6>Designed and Developed by Maadi El Moufaddal</h6>
+            <p>© 2025 Portfolio. All right reserved</p>
         </footer>
     )
 }
