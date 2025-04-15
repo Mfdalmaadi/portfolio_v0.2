@@ -71,8 +71,16 @@ import Resume from "../assets/Resume.pdf";
 import Switch from "./switch";
 
 const Navbar = ({ theme, changetheme }) => {
+    const closeNavbar = () => {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+    
+        if (navbarToggler && navbarCollapse.classList.contains("show")) {
+            navbarToggler.click(); // this simulates closing the navbar
+        }
+    };
     return (
-        <nav className={`navbar navbar-expand-lg ${theme === "light" ? "navbar-light bg-light" : "navbar-dark bg-blue"}`}>
+        <nav className={`navbar navbar-expand-lg ${theme === "light" ? "navbar-light bg-light" : "navbar-dark custom-dark"}`}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="#home">
                     <img src="me2.jpg" alt="Logo" style={{ width: "40px", height: "40px" }} className="rounded-pill" />
@@ -92,27 +100,27 @@ const Navbar = ({ theme, changetheme }) => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#home">
+                            <a className="nav-link" href="#home" onClick={closeNavbar}>
                                 <i className="bi bi-house-door me-1"></i>Home
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#about">
+                            <a className="nav-link" href="#about" onClick={closeNavbar}>
                                 <i className="bi bi-person me-1"></i>About
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#skills">
+                            <a className="nav-link" href="#skills" onClick={closeNavbar}>
                                 <i className="bi bi-lightbulb me-1"></i>Skills
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#projects">
+                            <a className="nav-link" href="#projects" onClick={closeNavbar}>
                                 <i className="bi bi-kanban me-1"></i>Projects
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#certificate">
+                            <a className="nav-link" href="#certificate" onClick={closeNavbar}>
                                 <i className="bi bi-award me-1"></i>Certificate
                             </a>
                         </li>
@@ -122,11 +130,11 @@ const Navbar = ({ theme, changetheme }) => {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#contact">
+                            <a className="nav-link" href="#contact" onClick={closeNavbar}>
                                 <i className="bi bi-envelope me-1"></i>Contact
                             </a>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item" onClick={closeNavbar}>
                             <Switch theme={theme} changetheme={changetheme} />
                         </li>
                     </ul>
