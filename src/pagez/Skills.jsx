@@ -25,6 +25,7 @@ const Skills = ({ theme }) => {
       { id: 13, name: "Docker", description: "Docker is an open-source platform that automates the deployment of applications inside containers.", image: "docker1.webp" },
       { id: 14, name: "Postman", description: "Postman is a popular tool used to design, test, and document APIs.", image: "postman.png" },
       { id: 15, name: "Redux", description: "Redux is a state management library often used with React to manage application state predictably. Combined with Redux Toolkit, it streamlines the process of writing reducers and handling asynchronous logic.", image : "redux.png" },
+      { id: 16, name: "Figma", description: "Figma is a collaborative design tool used for creating user interfaces, prototypes, and graphics directly in the browser.", image : "figma.png" }
     ],
   };
 
