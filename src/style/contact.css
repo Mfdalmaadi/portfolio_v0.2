@@ -1,114 +1,3 @@
-/* .container00 {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.container00.light{
-    background-color: #d8cdc7;
-    color: rgb(56, 56, 56);
-}
-.container00.dark{
-    background: #1f1f3d;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form label {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-label.light{
-    color: #a09e9e;
-}
-label.dark{
-    color: #faf8f8;
-}
-
-.form input[type="text"],
-.form input[type="email"],
-.form textarea {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.form input[type="text"]:focus,
-.form input[type="email"]:focus,
-.form textarea:focus {
-    border-color: #00ffbf;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.form textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.form button {
-    padding: 10px 20px;
-    font-size: 1em;
-    font-weight: bold;
-    color: #fff;
-    background: #700d60;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.form button:hover {
-    background: #cac9c9;
-    color: rgb(56, 55, 55);
-}
-
-.form input[type="text"]:hover,
-.form input[type="email"]:hover,
-.form textarea:hover {
-    border-color: #00ffc8;
-}
-.title.dark{
-    color: white;
-}
-.title.light{
-    color: #3f3e3e;
-}
-
-.form-h {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    width: 100%;
-    height: 100vh;
-    padding: 50px;
-    box-sizing: border-box;
-  }
-  
-  .form-c {
-    flex: 1;
-    max-width: 500px;
-  }
-  
-  .moon-model {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    height: 100%;
-    position: relative;
-  } */
-
-
 .container00 {
     max-width: 600px;
     margin: 0px;
@@ -118,11 +7,15 @@ label.dark{
 }
 
 .container00.light {
-    background-color: #d8cdc7;
+    background-color: #F8F4EC;
+    border: 2px solid #494949; /* Outline */
+    box-shadow: 0 0 0 4px rgba(65, 65, 65, 0.2); /* Outline glow */
     color: rgb(56, 56, 56);
 }
 .container00.dark {
-    background: #1f1f3d;
+    background: #020116;
+    border: 2px solid #008080; /* Outline */
+    box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.2); /* Outline glow */
 }
 
 .form {
@@ -163,17 +56,16 @@ label.dark {
     padding: 10px 20px;
     font-size: 1em;
     font-weight: bold;
-    color: #fff;
-    background: #700d60;
-    border: none;
+    color: #008080;
+    border: 2px solid #008080;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .form button:hover {
-    background: #cac9c9;
-    color: rgb(56, 55, 55);
+    background-color: #008080;
+  color: white;
 }
 
 

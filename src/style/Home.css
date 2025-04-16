@@ -43,6 +43,8 @@
     max-width: 150px;
     animation: fadeIn 2s ease-in forwards;
     object-fit: cover;
+    border: 2px solid #6b6b6b; /* Outline */
+    box-shadow: 0 0 0 4px rgba(22, 22, 22, 0.2); /* Outline glow */
 }
 .profile:hover{
     transform: scale(1.1);
