@@ -1,157 +1,177 @@
-/* .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
+:root {
+    --cards: 4;
+    --cardHeight: 65vh; /* Reduced for better mobile viewing */
+    --cardTopPadding: 1em;
+    --cardMargin: 3vw;
   }
-.project-card{
-    background-color:  #1f1f3d;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 400px;
-    height: 500px;
-    
-}
-h2 {
+  
+  body {
+    background-color: #2E3537;
+    font-family: "MS Sans Serif", Geneva, sans-serif;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+  }
+  
+  .projects-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  .projects-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Responsive font */
     text-align: center;
-    font-weight: bold;
+    margin-bottom: 3rem;
     color: #008080;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-    padding: 15px;
-    margin: 5px;
-}
-.pictures{
-    width: 100%;
-    height: 250px;
-    padding: 15px;
-    border-radius: 25px;
-}
-.desc{
-    font-weight: lighter;
-    text-align: center;
-    padding: 10px;
-    margin: 5px;
-}
-.skills{
-    color: rgb(255, 81, 0);
-    text-align: center;
-    font-weight: lighter;
-    margin: 5px;
-    padding: 10px;
-}
-.url{
-    text-decoration: none;
-    color: rgb(255, 72, 0);
-} */
-
-.projects-container {
+  }
+  
+  .projects-container {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--cards), auto); /* Auto height for mobile */
+    gap: var(--cardMargin);
+    padding-bottom: 2rem;
+  }
+  
+  /* Card Styles */
+  .project-card-hero {
+    position: sticky;
+    top: 100px; /* Smaller gap on mobile */
+    padding: 1.5rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-}
-
-.card-container {
-    perspective: 1000px;
-}
-
-.project-card {
-    width: 400px;
-    height: 600px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease-in-out;
-}
-
-.card-container:hover .project-card {
-    transform: rotateY(180deg);
-}
-
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.card-front.dark{
+    justify-content: space-between;
     background-color: #1f1f3d;
     color: white;
-}
-
-.card-front.light{
+    border-radius: 15px;
+    gap: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    height: auto; /* Override for mobile */
+    min-height: var(--cardHeight);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .project-card-hero.light {
     background-color: #d8cdc7;
-    color: rgb(56, 56, 56);
-}
-
-.card-back {
-    background-color:  #1f1f3d;
-    color: white;
-    shape-outside: 100px rgba(0, 0, 0, 0.2);
-    transform: rotateY(180deg);
-}
-
-.pictures {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-h2 {
-    text-align: center;
-    font-weight: bold;
+    color: #333;
+  }
+  
+  .project-content {
+    flex: 1;
+    padding: 1rem 0;
+  }
+  
+  .project-content h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     color: #008080;
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-    padding: 15px;
-    margin: 5px;
-}
-h2.light{
-    color: rgb(77, 74, 74);
-}
-.desc {
-    font-weight: lighter;
-    text-align: center;
-    padding: 10px;
-    margin: 5px;
-}
-
-.skills {
-    color: rgb(255, 81, 0);
-    text-align: center;
-    font-weight: lighter;
-    margin: 5px;
-    padding: 10px;
-}
-
-.url {
+    margin-bottom: 1rem;
+  }
+  
+  .project-content .desc {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .project-content .skills {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    color: #ff6600;
+    margin-bottom: 1.5rem;
+  }
+  
+  .url {
+    display: inline-block;
     text-decoration: none;
     color: #008080;
     font-weight: bold;
-    font-size: 18px;
-    padding: 10px 20px;
-    z-index: 50;
-}
-
-.url:hover {
-    background-color: #929696;
-    color: rgb(46, 44, 44);
-    border-radius: 15px;
-}
-
+    border: 2px solid #008080;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    transition: all 0.3s ease;
+  }
+  
+  .url:hover {
+    background-color: #008080;
+    color: white;
+  }
+  
+  .pictures {
+    width: clamp(200px, 30vw, 300px);
+    height: clamp(150px, 25vh, 200px);
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 1024px) {
+    .projects-container {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .project-card-hero {
+      flex-direction: column;
+      gap: 15px;
+      padding: 15px;
+    }
+  
+    .project-content h2 {
+      font-size: 2rem;
+    }
+  
+    .project-content .desc {
+      font-size: 14px;
+    }
+  
+    .project-content .skills {
+      font-size: 12px;
+    }
+  
+    .url {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  
+    .pictures {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .projects-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .project-card-hero {
+      padding: 10px;
+      gap: 10px;
+    }
+  
+    .project-content h2 {
+      font-size: 1.5rem;
+    }
+  
+    .project-content .desc {
+      font-size: 14px;
+    }
+  
+    .project-content .skills {
+      font-size: 12px;
+    }
+  
+    .url {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+  
+    .pictures {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
