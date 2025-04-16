@@ -9,35 +9,35 @@
   overflow: hidden;
   padding: 20px;
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 .splash-inner {
-  text-align: center;
+  max-width: 90%;
   z-index: 2;
-  max-width: 700px;
 }
 
 .splash-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #797a7a;
   margin-bottom: 10px;
 }
 
 .splash-welcome {
-  font-size: 1rem;
-  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
   color: #8892b0;
   margin-bottom: 30px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .splash-button {
-  padding: 12px 24px;
+  padding: 10px 20px;
   background-color: transparent;
   color: #727272;
   border: 2px solid #585858;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   font-family: 'Press Start 2P', cursive;
   cursor: pointer;
@@ -47,4 +47,19 @@
 .splash-button:hover {
   background-color: #585858;
   color: #020116;
+}
+
+/* Responsive font sizes for smaller screens */
+@media (max-width: 768px) {
+  .splash-title {
+    font-size: 1.5rem;
+  }
+
+  .splash-welcome {
+    font-size: 0.7rem;
+  }
+
+  .splash-button {
+    font-size: 0.7rem;
+  }
 }

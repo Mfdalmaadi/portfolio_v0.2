@@ -81,7 +81,7 @@
   font-size: 20px;
   margin: 12px 0;
   font-weight: bold;
-  color: #6d6d6d;
+  color: #636363;
 }
 
 .cert-desc {
@@ -116,5 +116,29 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .certification-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card-container {
+    max-width: 90%;
+  }
+
+  .cert-name {
+    font-size: 16px;
+  }
+
+  .cert-desc {
+    font-size: 12px;
+  }
+
+  .cert-link {
+    font-size: 13px;
   }
 }
