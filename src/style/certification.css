@@ -43,15 +43,15 @@
 
 .certification-card.dark {
   background-color: #020116;
-  border: 2px solid #008080; /* Outline */
-  box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.2); /* Outline glow */
+  border: 2px solid #008080;
+  box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.2);
   color: white;
 }
 
 .certification-card.light {
   background-color: #F8F4EC;
-  border: 2px solid #494949; /* Outline */
-  box-shadow: 0 0 0 4px rgba(65, 65, 65, 0.2); /* Outline glow */
+  border: 2px solid #494949;
+  box-shadow: 0 0 0 4px rgba(65, 65, 65, 0.2);
   color: rgb(56, 56, 56);
 }
 

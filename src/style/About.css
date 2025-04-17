@@ -48,8 +48,8 @@
     height: 100%;
     border-radius: 10px;
     opacity: 0;
-    border: 2px solid #6b6b6b; /* Outline */
-    box-shadow: 0 0 0 4px rgba(22, 22, 22, 0.2); /* Outline glow */
+    border: 2px solid #6b6b6b;
+    box-shadow: 0 0 0 4px rgba(22, 22, 22, 0.2);
     animation: fadeIn 2s ease-in forwards;
   }
  
@@ -110,7 +110,6 @@ h1.light{
 
 
 
-/* ✅ Responsive Design */
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
