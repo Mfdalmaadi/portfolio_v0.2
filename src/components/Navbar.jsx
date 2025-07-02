@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Resume from "../assets/Resume.pdf";
-import Switch from "./Switch";
+import Switch from "./switch";
 import "../style/Navbar.css";
 
 const Navbar = ({ theme, changetheme }) => {
