@@ -17,7 +17,7 @@ const About = ({ theme }) => {
               with databases like MySQL and MongoDB.
             </p>
             <p className="about-page-paragraph">
-              My journey in tech started with a love for problem-solving and curiosity about technology.
+              My journey in tech started with a love for problem solving and curiosity about technology.
             </p>
             <p className="about-page-paragraph">
               I'm looking to join a company that values innovation and continuous learning.
