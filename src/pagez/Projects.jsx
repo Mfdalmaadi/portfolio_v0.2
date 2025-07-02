@@ -18,7 +18,7 @@ const Projects = ({ theme }) => {
       description:
         "Professional coaching website built with WordPress and Elementor. Clean design with responsive layout and streamlined service presentation for HD-Maroc.",
       image: "medact.jpg",
-      skills: ["React", "Redux"],
+      skills: ["Wordpress", "Elementor"],
       url: "https://hd-maroc.com/coaching/",
     },
     {
