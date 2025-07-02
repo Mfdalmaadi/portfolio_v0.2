@@ -1,147 +1,85 @@
-// import React from "react";
-// import "../style/Navbar.css";
-// import Resume from "../assets/Resume.pdf";
-// import Switch from "./switch";
-
-// const Navbar = ({ theme, changetheme }) => {
-//     return (
-//         <nav className={`navbar navbar-expand-lg ${theme === "light" ? "navbar-light bg-light" : "navbar-dark bg-black"}`}>
-//             <div className="container-fluid">
-//                 <a className="navbar-brand" href="#home">
-//                     <img src="me2.jpg" alt="Logo" style={{ width: "40px", height: "40px" }} className="rounded-pill" />
-//                 </a>
-
-//                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-//                     <span className="navbar-toggler-icon"></span>
-//                 </button>
-
-//                 <div className="collapse navbar-collapse" id="navbarNav">
-//                     <ul className="navbar-nav ms-auto">
-//                         <li className="nav-item">
-//                             <a className="nav-link" href="#home">
-//                                 <i className="bi bi-house-door me-1"></i>Home
-//                             </a>
-//                         </li>
-//                         <li className="nav-item">
-//                             <a className="nav-link" href="#about">
-//                                 <i className="bi bi-person me-1"></i>About
-//                             </a>
-//                         </li>
-//                         <li className="nav-item">
-//                             <a className="nav-link" href="#skills">
-//                                 <i className="bi bi-lightbulb me-1"></i>Skills
-//                             </a>
-//                         </li>
-//                         <li className="nav-item">
-//                             <a className="nav-link" href="#projects">
-//                                 <i className="bi bi-kanban me-1"></i>Projects
-//                             </a>
-//                         </li>
-//                         <li className="nav-item">
-//                             <a className="nav-link" href="#certificate">
-//                                 <i className="bi bi-award me-1"></i>Certificate
-//                             </a>
-//                         </li>
-//                         <li className="nav-item">
-//                             <a className="nav-link" href={Resume} target="_blank">
-//                                 <i className="bi bi-file-earmark me-1"></i>Resume
-//                             </a>
-//                         </li>
-//                         <li className="nav-item">
-//                             <a className="nav-link" href="#contact">
-//                                 <i className="bi bi-envelope me-1"></i>Contact
-//                             </a>
-//                         </li>
-//                         <li className="nav-item">
-//                             <Switch theme={theme} changetheme={changetheme} />
-//                         </li>
-//                     </ul>
-//                 </div>
-//             </div>
-//         </nav>
-//     );
-// };
-
-// export default Navbar;
-
-
-import React from "react";
-import "../style/Navbar.css";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Resume from "../assets/Resume.pdf";
-import Switch from "./switch";
+import Switch from "./Switch";
+import "../style/Navbar.css";
 
 const Navbar = ({ theme, changetheme }) => {
-    const closeNavbar = () => {
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const navbarCollapse = document.querySelector(".navbar-collapse");
-    
-        if (navbarToggler && navbarCollapse.classList.contains("show")) {
-            navbarToggler.click(); // this simulates closing the navbar
-        }
-    };
-    return (
-        <nav className={`navbar navbar-expand-lg ${theme === "light" ? "navbar-light bg-light" : "navbar-dark custom-dark"}`}>
-            <div className="container-fluid">
-                <a className="navbar-brand" href="#home">
-                    <img src="me2.jpg" alt="Logo" style={{ width: "40px", height: "40px" }} className="rounded-pill" />
-                </a>
+  const [isOpen, setIsOpen] = useState(false);
 
-                <button 
-                    className="navbar-toggler" 
-                    type="button" 
-                    data-bs-toggle="collapse" 
-                    data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" 
-                    aria-expanded="false" 
-                    aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+  const handleNavClick = (id) => {
+    setIsOpen(false);
+    if (window.location.pathname === "/" && id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav ms-auto">
-                        <li className="nav-item">
-                            <a className="nav-link" href="#home" onClick={closeNavbar}>
-                                <i className="bi bi-house-door me-1"></i>Home
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#about" onClick={closeNavbar}>
-                                <i className="bi bi-person me-1"></i>About
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#skills" onClick={closeNavbar}>
-                                <i className="bi bi-lightbulb me-1"></i>Skills
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#projects" onClick={closeNavbar}>
-                                <i className="bi bi-kanban me-1"></i>Projects
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#certificate" onClick={closeNavbar}>
-                                <i className="bi bi-award me-1"></i>Certificate
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href={Resume} target="_blank" rel="noopener noreferrer">
-                                <i className="bi bi-file-earmark me-1"></i>Resume
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#contact" onClick={closeNavbar}>
-                                <i className="bi bi-envelope me-1"></i>Contact
-                            </a>
-                        </li>
-                        <li className="nav-item" onClick={closeNavbar}>
-                            <Switch theme={theme} changetheme={changetheme} />
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    );
+  return (
+    <div className={`retro-navbar ${theme}`}>
+      <div className="retro-navbar-left">
+        <img src="me2.jpg" alt="Logo" className="retro-avatar" />
+        <span className="retro-title">Mfdal.dev</span>
+      </div>
+
+      <div className="burger" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "✕" : "☰"}
+      </div>
+
+      <div className={`retro-navbar-right ${isOpen ? "open" : ""}`}>
+        <div className="nav-section">
+          <Link 
+            to="/" 
+            onClick={() => handleNavClick("home")} 
+            className="retro-menu"
+          >
+            Home
+          </Link>
+          <div className="nav-divider"></div>
+          <Link 
+            to="/about" 
+            onClick={() => handleNavClick()} 
+            className="retro-menu about-link"
+          >
+            About
+          </Link>
+          <Link 
+            to="/#skills" 
+            onClick={() => handleNavClick("skills")} 
+            className="retro-menu"
+          >
+            Skills
+          </Link>
+          <Link 
+            to="/#projects" 
+            onClick={() => handleNavClick("projects")} 
+            className="retro-menu"
+          >
+            Projects
+          </Link>
+          <Link 
+            to="/#contact" 
+            onClick={() => handleNavClick("contact")} 
+            className="retro-menu"
+          >
+            Contact
+          </Link>
+          <a
+            href={Resume}
+            className="retro-menu"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+          >
+            Resume
+          </a>
+          <Switch theme={theme} changetheme={changetheme} />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;

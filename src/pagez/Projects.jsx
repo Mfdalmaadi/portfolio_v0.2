@@ -1,75 +1,131 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../style/Projects.css";
 
 const Projects = ({ theme }) => {
   const projects = [
     {
+      id: 100,
+      name: "THE GUIDE",
+      description:
+        "Full-stack tourism platform for northern Morocco with React frontend and Laravel backend. Features role-based dashboards for tourists, guides, and service providers.",
+      image: "theguide.jpg",
+      skills: ["React", "Laravel", "Sanctum", "MySQL"],
+      url: "https://github.com/Ashraf-gitgud/The-Guide-App"
+    },
+    {
+      id: 101,
+      name: "MEDACT",
+      description:
+        "Professional coaching website built with WordPress and Elementor. Clean design with responsive layout and streamlined service presentation for HD-Maroc.",
+      image: "medact.jpg",
+      skills: ["React", "Redux"],
+      url: "https://hd-maroc.com/coaching/",
+    },
+    {
       id: 1,
       name: "Fake-Store",
       description:
-        "A React-based Fake Store platform that fetches and displays products from an API and manages state using Redux.",
+        "React e-commerce platform with API integration, Redux state management, shopping cart functionality, and advanced product filtering system.",
       image: "fake-store.jpg",
-      skills: "#React #Redux",
-      URL: "https://1103-one.vercel.app/",
+      skills: ["React", "Redux"],
+      url: "https://1103-one.vercel.app/",
     },
     {
       id: 2,
       name: "Coffee Shop API",
       description:
-        "I developed a Laravel-based API that powers a coffee shop management system. This API includes endpoints for managing menu items, orders, and customer reviews. It allows users to see the menu and place orders, and submit feedback. The API is fully RESTful, with clear and well-structured routes, and employs CORS for cross-origin requests",
+        "Laravel RESTful API for coffee shop operations featuring menu management, order processing, and customer review endpoints with secure authentication.",
       image: "API.jpg",
-      skills: "#Laravel",
-      URL: "http://cafeshop-api.infinityfreeapp.com/api/menu",
+      skills: ["Laravel", "PHP"],
+      url: "https://github.com/Mfdalmaadi/Twilight-Caf--backend",
     },
     {
       id: 3,
       name: "PC Repair Hub",
       description:
-        "A website based on WordPress providing PC repair and maintenance services with easy navigation and simple user experience",
+        "WordPress service website for PC repairs with booking system and customer support. Built with Elementor for responsive design.",
       image: "pcrepairhub.jpg",
-      skills: "#WordPress",
-      URL: "https://pcrepairhub7.wordpress.com/",
+      skills: ["WordPress", "Elementor"],
+      url: "https://pcrepairhub7.wordpress.com/",
+    },
+
+    {
+      id: 5,
+      name: " FinMind",
+      description:
+        "AI-powered personal finance app for expense tracking and budgeting. Features spending predictions, categorization, and dynamic charts for financial insights.",
+      image: "comingSoon.webp",
+      skills: ["React", "Node.js", "Supabase", "Tailwind CSS", "Chart.js", "OpenRouter (GPT-3.5)", "Vercel"],
     },
     {
-      id: 4,
-      name: "Admin Dashboard",
+      id: 6,
+      name: " FitPilot",
       description:
-        "A simple and responsive admin dashboard built with React and styled using CSS. It features a clean layout with core components like a sidebar, making it a great starting point for admin interfaces.",
-      image: "dashboard.jpg",
-      skills: "#React",
-      URL: "https://dashboard-five-iota-52.vercel.app/",
+        "Mobile fitness coach with AI-generated workout plans. Tracks progress and adapts to user preferences for personalized training schedules.",
+      image: "comingSoon.webp",
+      skills: ["React Native", "Supabase", "Tailwind CSS", "OpenRouter (GPT-3.5)", "Expo Go"],
     },
-  ];
+    {
+      id: 7,
+      name: " Threadly ",
+      description:
+        "E-commerce platform for clothing brands with Stripe checkout, product filtering, and admin panel. Features AI-powered style recommendations.",
+      image: "comingSoon.webp",
+      skills: ["React", "Laravel", "Supabase", "Stripe", "MySQL", "Tailwind CSS", "Vercel", "Render"],
+    },
+    {
+      id: 8,
+      name: " SkillSwap ",
+      description:
+        "Skill exchange platform connecting professionals for mutual collaboration. Features intelligent matching system and reputation-based trust building.",
+      image: "comingSoon.webp",
+      skills: ["React", "Supabase", "Tailwind CSS", "Chart.js", "OpenRouter (GPT-3.5)", "Vercel"],
+    }
+];
 
   return (
-    <div className="projects-wrapper">
-      <h1 className={`projects-title ${theme}`}>Projects</h1>
+    <section id="projects" className={`projects-section ${theme}`}>
       <div className="projects-container">
-        {projects.map((project, index) => (
-            <div
-            key={project.id}
-            className={`project-card-hero ${theme} ${index % 2 !== 0 ? "reverse" : ""}`}
-            data-aos="fade-up"
-            data-aos-delay={index * 150}
-            >        
-                <div className="project-content">
-                    <h2>{project.name}</h2>
-                    <p className="desc">{project.description}</p>
-                    <p className="skills">{project.skills}</p>
-                    <a
-                        href={project.URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="url"
-                    >
-                        Visit Website 🔗
-                    </a>
+        <div className="projects-header">
+          <h2 className="projects-title-shadow">PROJECTS</h2>
+          <h2 className="projects-title">PROJECTS</h2>
+        </div>
+
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <div key={project.id} className={`project-card ${theme}`}>
+              <div className="project-image-container">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="project-image"
+                  onError={(e) => (e.target.src = "fallback-project.png")}
+                />
+              </div>
+              <div className="project-content">
+                <h3 className="project-name">{project.name}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-skills">
+                  {project.skills.map((skill) => (
+                    <span key={skill} className="skill-tag">
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-                <img src={project.image} alt={project.name} className="pictures" />
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`project-link ${theme}`}
+                >
+                  <span className="link-icon">↗</span> View Project
+                </a>
+              </div>
             </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

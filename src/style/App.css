@@ -1,58 +1,79 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-.app.light {
-    background-color: #F8F4EC;
-    background-image: 
-    repeating-linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.05) 0px,
-      rgba(0, 0, 0, 0.05) 1px,
-      transparent 1px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(0, 0, 0, 0.05) 0px,
-      rgba(0, 0, 0, 0.05) 1px,
-      transparent 1px,
-      transparent 20px
-    );
-  background-repeat: repeat;
+  margin: 0;
+  font-family: 'VT323', monospace;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
 }
-  
+
+.app.light {
+  background: url("/ep_naturalwhite.png") repeat fixed;
+  image-rendering: pixelated;
+  filter: contrast(1.1);
+  color: #000;
+}
+
 .app.dark {
-    background-color: #020116 ;
+  background: url("/beanstalk-dark.png") repeat fixed;
+  image-rendering: pixelated;
+  filter: contrast(1.1);
+  color: #f0f0f0;
 }
 
 .theme-toggle {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-
-section{
-  padding: 60px 20px;
-  margin-bottom: 130px;
-  scroll-margin-top: 130px;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.animation{
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 30%;
+/* === SECTION LAYOUT === */
+section {
+  padding: 40px 20px;
+  margin-bottom: 20px;
+  scroll-margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: scrollFade 0.6s ease forwards;
 }
 
-
-@keyframes appear {
-  from{
-    opacity: 0;
-    scale: 0.5;
-  }
-  to{
+/* === ANIMATION ON SCROLL === */
+@keyframes scrollFade {
+  to {
     opacity: 1;
-    scale: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation delay per section */
+#home {
+  animation-delay: 0.1s;
+}
+
+#skills {
+  animation-delay: 0.2s;
+}
+
+#experience {
+  animation-delay: 0.3s;
+}
+
+#projects {
+  animation-delay: 0.4s;
+}
+
+#certificate {
+  animation-delay: 0.5s;
+}
+
+#contact {
+  animation-delay: 0.6s;
+}
+
+/* === MOBILE RESPONSIVENESS === */
+@media (max-width: 768px) {
+  section {
+    padding: 30px 15px;
+    scroll-margin-top: 70px;
   }
 }

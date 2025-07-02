@@ -1,0 +1,41 @@
+.retro-window {
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  max-width: 900px;
+  margin: 60px auto;
+  font-family: 'VT323', monospace;
+}
+
+.retro-window-header {
+  background-color: #000080;
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.retro-window-icon {
+  margin-right: 8px;
+}
+
+.retro-window-title {
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.retro-window-actions .retro-btn {
+  background-color: silver;
+  border: 1px solid black;
+  padding: 0 6px;
+  margin-left: 4px;
+  font-size: 12px;
+  cursor: default;
+}
+
+.retro-window-content {
+  padding: 16px;
+  background-color: #ffffff;
+  border-top: 2px solid #000;
+}

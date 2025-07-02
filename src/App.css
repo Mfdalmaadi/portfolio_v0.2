@@ -1,42 +1,62 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: 'VT323', monospace;
+  background-color: #d4d0c8;
+  color: #000;
+  scroll-behavior: smooth;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* App container */
+.app {
+  padding-top: 60px; /* Offset for fixed navbar */
+}
+
+/* Main scroll area */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between windows */
+  padding: 1rem;
+  align-items: center;
+}
+
+/* Theme variants */
+.app.light {
+  background-color: #f5f5f5;
+  color: #000;
+}
+
+.app.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.retro-window-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Scroll section anchors */
+section {
+  scroll-margin-top: 70px; /* Prevents overlap under navbar */
+  width: 100%;
+}
+
+/* Responsive touch */
+@media (max-width: 768px) {
+  .app {
+    padding-top: 50px;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    gap: 24px;
+    padding: 0.5rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
